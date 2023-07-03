@@ -29,7 +29,10 @@ export default function App() {
       <div className="app">
          <div className="sidebar">
             <FriendsList friends={friends} />
+            <FormAddFriend />
+            <Button>Close</Button>
          </div>
+         <FormSplitBill />
       </div>
    );
 }
@@ -57,7 +60,48 @@ function Friend({ friend }) {
                {friend.name} owes you a total of ${friend.balance}
             </p>
          )}
-         <button className="button">Select</button>
+         <Button>Select</Button>
       </li>
    );
+}
+
+function FormAddFriend() {
+   return (
+      <form action="" className="form-add-friend">
+         <label htmlFor="input-name">🏃 Friend name</label>
+         <input type="text" name="input-image" id="input-name" />
+
+         <label htmlFor="input-image">📷 Image URL</label>
+         <input type="text" name="input-image" id="input-image" />
+
+         <Button>Add Friend</Button>
+      </form>
+   );
+}
+
+function FormSplitBill() {
+   return (
+      <form action="" className="form-split-bill">
+         <h2>Split a bill with X</h2>
+
+         <label htmlFor="input-bill">💰 Bill Value</label>
+         <input type="text" name="input-bill" id="input-bill" />
+
+         <label htmlFor="input-expenses">💸 Your expenses</label>
+         <input type="text" name="input-expenses" id="input-expenses" />
+
+         <label htmlFor="input-friends">🫂 X's expenses</label>
+         <input type="text" name="input-friends" id="input-friends" disabled={true} />
+
+         <label htmlFor="select-payer">🤑 Who is paying the bill?</label>
+         <select name="select-payer" id="select-payer">
+            <option value="user">Your</option>
+            <option value="firend">X</option>
+         </select>
+      </form>
+   );
+}
+
+function Button({ children }) {
+   return <button className="button">{children}</button>;
 }

@@ -1,10 +1,12 @@
 .app {
    display: grid;
    align-items: start;
-   grid-template-columns: 33rem 44rem;
+   /* grid-template-columns: 33rem 44rem; */
+   grid-template-columns: minmax(min-content, 33rem) minmax(min-content, 45rem);
    column-gap: 4rem;
 
    min-height: 66vh;
+   margin-inline: 2rem;
 }
 
 .sidebar ul {
@@ -54,6 +56,8 @@
    margin-right: 1.2rem;
 }
 
+/* FRIEND */
+
 .green {
    color: #66a80f;
 }
@@ -62,9 +66,12 @@
    color: #e03131;
 }
 
+/* BUTTON */
+
 .button {
-   background-color: var(--color-medium);
+   font-size: 1.6rem;
    color: #343a40;
+   background-color: var(--color-medium);
    padding: 0.8rem 1.2rem;
    border: none;
    border-radius: 7px;
@@ -74,4 +81,74 @@
 }
 .button:hover {
    background-color: var(--color-dark);
+}
+
+/*FORM */
+
+form {
+   font-size: 1.6rem;
+   display: grid;
+   align-items: center;
+   gap: 1.2rem;
+
+   background-color: var(--color-lightest);
+   border-radius: 7px;
+   padding: 0.5em;
+}
+
+.form-add-friend {
+   grid-template-columns: max-content 1fr;
+   margin-bottom: 1.6rem;
+   padding: 1.2rem;
+}
+
+.form-split-bill {
+   grid-template-columns: 1fr 12rem;
+   padding: 3.2rem 4rem;
+}
+
+label {
+   font-weight: 500;
+}
+
+label::first-letter {
+   display: inline-block;
+   margin-right: 4px;
+   font-size: 1.8rem;
+}
+
+input,
+select {
+   font-family: inherit;
+   color: inherit;
+   font-size: 1.5rem;
+   padding: 0.7rem;
+   text-align: center;
+   border: 1px solid var(--color-light);
+   border-radius: 4px;
+   transition: 0.3s;
+}
+
+input:disabled {
+   background-color: #5a6068;
+   border-color: grey;
+}
+
+input:focus,
+select:focus {
+   outline: none;
+   border: 1px solid var(--color-dark);
+}
+
+form .button {
+   margin-top: 0.6rem;
+   grid-column: 2;
+}
+
+form h2 {
+   grid-column: 1 / -1;
+   font-size: 2.2rem;
+   text-transform: uppercase;
+   letter-spacing: -0.5px;
+   margin-bottom: 1.6rem;
 }
