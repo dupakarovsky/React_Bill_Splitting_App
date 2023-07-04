@@ -97,7 +97,7 @@ form {
 }
 
 .form-add-friend {
-   grid-template-columns: max-content 1fr;
+   grid-template-columns: 40% 55%;
    margin-bottom: 1.6rem;
    padding: 1.2rem;
 }
